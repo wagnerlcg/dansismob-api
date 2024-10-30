@@ -1,3 +1,11 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+
+class DeputadoAdmin(admin.ModelAdmin):
+    list_display = ('nomedeputado', 'whatsapp',)
+    search_fields = ('nomedeputado',)
+
+
+admin.site.register(models.Deputado, DeputadoAdmin)	
+
